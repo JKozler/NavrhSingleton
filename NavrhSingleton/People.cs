@@ -8,16 +8,25 @@ namespace NavrhSingleton
 {
     public class People
     {
+        private static People instance = null;
+
         public string Jmeno { get; set; }
         public string Prijmeni { get; set; }
         public DateTime DatumNarozeni { get; set; }
         public string RodneCislo { get; set; }
-        public People(string jmeno, string prijmeni, DateTime datumNarozeni, string rodneCislo)
+        private People()
+        {}
+
+        public static People Instance
         {
-            Jmeno = jmeno;
-            Prijmeni = prijmeni;
-            DatumNarozeni = datumNarozeni;
-            RodneCislo = rodneCislo;
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new People();
+                }
+                return instance;
+            }
         }
     }
 }

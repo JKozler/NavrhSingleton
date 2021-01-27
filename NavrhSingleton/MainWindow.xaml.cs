@@ -30,13 +30,13 @@ namespace NavrhSingleton
         {
             if (name.Text != null && prijmeni.Text != null && datumNarozeni.SelectedDate != null && rodneCislo.Text != null)
             {
-                People people = new People(name.Text, prijmeni.Text, Convert.ToDateTime(datumNarozeni.SelectedDate), rodneCislo.Text);
+                People people = People.Instance;
+                people.Jmeno = name.Text;
+                people.Prijmeni = prijmeni.Text;
+                people.DatumNarozeni = Convert.ToDateTime(datumNarozeni.SelectedDate);
+                people.RodneCislo = rodneCislo.Text;
                 dbPeople.Add(rodneCislo.Text, people);
-            }
-            allPeople.Items.Clear();
-            foreach (var item in dbPeople)
-            {
-                allPeople.Items.Add(item.Value.Jmeno + " " + item.Value.Prijmeni);
+                allPeople.Items.Add(people.Jmeno + " " + people.Prijmeni);
             }
         }
     }
