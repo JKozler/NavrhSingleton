@@ -11,8 +11,8 @@ namespace NavrhSingleton
         public string Jmeno { get; set; }
         public string Prijmeni { get; set; }
         public DateTime DatumNarozeni { get; set; }
-        public int RodneCislo { get; set; }
-        public People(string jmeno, string prijmeni, DateTime datumNarozeni, int rodneCislo)
+        public string RodneCislo { get; set; }
+        public People(string jmeno, string prijmeni, DateTime datumNarozeni, string rodneCislo)
         {
             Jmeno = jmeno;
             Prijmeni = prijmeni;

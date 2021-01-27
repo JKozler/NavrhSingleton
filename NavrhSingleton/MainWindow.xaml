@@ -6,7 +6,33 @@
         xmlns:local="clr-namespace:NavrhSingleton"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Jmeno:" VerticalAlignment="Center" FontSize="24"></Label>
+            <TextBox Grid.Row="1" Grid.Column="0" x:Name="name" Margin="10" VerticalContentAlignment="Center" FontSize="20"></TextBox>
+            <Label Grid.Row="2" Grid.Column="0" Content="Prijmeni:" VerticalAlignment="Center" FontSize="24"></Label>
+            <TextBox Grid.Row="3" Grid.Column="0" x:Name="prijmeni" Margin="10" VerticalContentAlignment="Center" FontSize="20"></TextBox>
+            <Label Grid.Row="4" Grid.Column="0" Content="Rodne cislo:" VerticalAlignment="Center" FontSize="24"></Label>
+            <TextBox Grid.Row="5" Grid.Column="0" x:Name="rodneCislo" Margin="10" VerticalContentAlignment="Center" FontSize="20"></TextBox>
+            <Label Grid.Row="6" Grid.Column="0" Content="Datum narozeni:" VerticalAlignment="Center" FontSize="24"></Label>
+            <DatePicker Grid.Row="7" Grid.Column="0" x:Name="datumNarozeni" Margin="10" VerticalContentAlignment="Center"></DatePicker>
+            <Button Grid.Column="0" Grid.Row="8" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Save" x:Name="save" Click="save_Click"></Button>
+            <ListBox Grid.Row="0" Grid.Column="1" Grid.RowSpan="7" Margin="5" x:Name="allPeople"></ListBox>
+        </Grid>
+    </Border>
 </Window>

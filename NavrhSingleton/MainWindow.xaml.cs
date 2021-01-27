@@ -20,10 +20,24 @@ namespace NavrhSingleton
     /// </summary>
     public partial class MainWindow : Window
     {
-        Dictionary<int, People> dbPeople = new Dictionary<int, People>();
+        Dictionary<string, People> dbPeople = new Dictionary<string, People>();
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            if (name.Text != null && prijmeni.Text != null && datumNarozeni.SelectedDate != null && rodneCislo.Text != null)
+            {
+                People people = new People(name.Text, prijmeni.Text, Convert.ToDateTime(datumNarozeni.SelectedDate), rodneCislo.Text);
+                dbPeople.Add(rodneCislo.Text, people);
+            }
+            allPeople.Items.Clear();
+            foreach (var item in dbPeople)
+            {
+                allPeople.Items.Add(item.Value.Jmeno + " " + item.Value.Prijmeni);
+            }
         }
     }
 }
