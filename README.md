@@ -1,0 +1,2 @@
+# NavrhSingleton
+DU - Návrh Singletion
